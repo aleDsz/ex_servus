@@ -2,10 +2,6 @@ use Mix.Config
 
 # Configure your database
 config :servus, Servus.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "servus_dev",
-  hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
