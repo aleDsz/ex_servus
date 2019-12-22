@@ -1,4 +1,4 @@
-defmodule App.ErrorView do
+defmodule App.Web.ErrorView do
   use App, :view
 
   # If you want to customize a particular status code
