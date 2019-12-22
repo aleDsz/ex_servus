@@ -1,12 +1,12 @@
-defmodule ServusWeb do
+defmodule App do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use ServusWeb, :controller
-      use ServusWeb, :view
+      use App, :controller
+      use App, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,19 +19,19 @@ defmodule ServusWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: ServusWeb
+      use Phoenix.Controller, namespace: App
 
       import Plug.Conn
-      import ServusWeb.Gettext
-      alias ServusWeb.Router.Helpers, as: Routes
+      import App.Gettext
+      alias App.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/servus_web/templates",
-        namespace: ServusWeb
+        root: "lib/app/templates",
+        namespace: App
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 1, get_flash: 2, view_module: 1]
@@ -39,9 +39,9 @@ defmodule ServusWeb do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import ServusWeb.ErrorHelpers
-      import ServusWeb.Gettext
-      alias ServusWeb.Router.Helpers, as: Routes
+      import App.ErrorHelpers
+      import App.Gettext
+      alias App.Router.Helpers, as: Routes
     end
   end
 
@@ -56,7 +56,7 @@ defmodule ServusWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import ServusWeb.Gettext
+      import App.Gettext
     end
   end
 

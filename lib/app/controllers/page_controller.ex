@@ -1,5 +1,5 @@
-defmodule ServusWeb.PageController do
-  use ServusWeb, :controller
+defmodule App.PageController do
+  use App, :controller
 
   def index(conn, _params) do
     render(conn, "index.html")

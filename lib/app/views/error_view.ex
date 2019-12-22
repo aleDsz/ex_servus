@@ -1,5 +1,5 @@
-defmodule ServusWeb.ErrorView do
-  use ServusWeb, :view
+defmodule App.ErrorView do
+  use App, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

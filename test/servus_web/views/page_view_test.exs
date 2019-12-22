@@ -1,3 +1,3 @@
-defmodule ServusWeb.PageViewTest do
-  use ServusWeb.ConnCase, async: true
+defmodule App.PageViewTest do
+  use App.ConnCase, async: true
 end

@@ -11,7 +11,7 @@ defmodule Servus.Application do
       # Start the Ecto repository
       Servus.Repo,
       # Start the endpoint when the application starts
-      ServusWeb.Endpoint
+      App.Endpoint
       # Starts a worker by calling: Servus.Worker.start_link(arg)
       # {Servus.Worker, arg},
     ]
@@ -25,7 +25,7 @@ defmodule Servus.Application do
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    ServusWeb.Endpoint.config_change(changed, removed)
+    App.Endpoint.config_change(changed, removed)
     :ok
   end
 end

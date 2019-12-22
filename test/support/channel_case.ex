@@ -1,4 +1,4 @@
-defmodule ServusWeb.ChannelCase do
+defmodule App.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -21,7 +21,7 @@ defmodule ServusWeb.ChannelCase do
       use Phoenix.ChannelTest
 
       # The default endpoint for testing
-      @endpoint ServusWeb.Endpoint
+      @endpoint App.Endpoint
     end
   end
 

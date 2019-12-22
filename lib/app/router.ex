@@ -1,5 +1,5 @@
-defmodule ServusWeb.Router do
-  use ServusWeb, :router
+defmodule App.Router do
+  use App, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,14 +13,14 @@ defmodule ServusWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", ServusWeb do
+  scope "/", App do
     pipe_through :browser
 
     get "/", PageController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", ServusWeb do
+  # scope "/api", App do
   #   pipe_through :api
   # end
 end

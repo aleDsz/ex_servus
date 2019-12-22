@@ -11,10 +11,10 @@ config :servus,
   ecto_repos: [Servus.Repo]
 
 # Configures the endpoint
-config :servus, ServusWeb.Endpoint,
+config :servus, App.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "zgbIxbudu26tvwouyxnv95RDPvg8fPfImFPjK6TfSpvazxIAv0F72G2JjJwoCyiQ",
-  render_errors: [view: ServusWeb.ErrorView, accepts: ~w(html json)],
+  render_errors: [view: App.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Servus.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger

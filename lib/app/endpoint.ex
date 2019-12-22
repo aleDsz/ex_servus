@@ -1,7 +1,7 @@
-defmodule ServusWeb.Endpoint do
+defmodule App.Endpoint do
   use Phoenix.Endpoint, otp_app: :servus
 
-  socket "/socket", ServusWeb.UserSocket,
+  socket "/socket", App.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -42,5 +42,5 @@ defmodule ServusWeb.Endpoint do
     key: "_servus_key",
     signing_salt: "2YLmf1a1"
 
-  plug ServusWeb.Router
+  plug App.Router
 end

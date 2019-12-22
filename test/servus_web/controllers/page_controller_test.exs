@@ -1,5 +1,5 @@
-defmodule ServusWeb.PageControllerTest do
-  use ServusWeb.ConnCase
+defmodule App.PageControllerTest do
+  use App.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, "/")
