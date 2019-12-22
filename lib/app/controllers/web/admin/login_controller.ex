@@ -3,6 +3,8 @@ defmodule App.Admin.LoginController do
 
   @spec index(Plug.Conn.t(), map) :: Plug.Conn.t()
   def index(conn, _params) do
-    conn |> put_layout("admin.html") |> render("index.html")
+    conn
+    |> put_layout({App.Admin.LayoutView, :admin})
+    |> render("index.html")
   end
 end
