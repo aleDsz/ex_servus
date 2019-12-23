@@ -7,6 +7,7 @@ defmodule App.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug :put_layout, {App.Admin.LayoutView, "main.html"}
   end
 
   pipeline :web do
@@ -15,6 +16,7 @@ defmodule App.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug :put_layout, {App.Web.LayoutView, "main.html"}
   end
 
   pipeline :api do
