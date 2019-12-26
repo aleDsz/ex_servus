@@ -35,3 +35,6 @@ npm-debug.log
 
 # ElixirLS Dialyzer folder
 /.elixir_ls/
+
+# Private environments
+/priv/envs/
