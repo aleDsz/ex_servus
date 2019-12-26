@@ -16,6 +16,7 @@ config :servus, App.Endpoint,
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
+  live_view: [signing_salt: "nC0WzRbuZQgRnkB0VIRllW5YTmv2/mJa"],
   watchers: [
     node: [
       "node_modules/webpack/bin/webpack.js", "--mode", "development", "--watch-stdin",
@@ -29,7 +30,9 @@ config :servus, App.Endpoint,
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/app/{live,views}/.*(ex)$",
+      ~r"lib/app/views/.*(ex)$",
+      ~r"lib/app/live/.*(ex)$",
+      ~r"lib/app/components/.*(ex)$",
       ~r"lib/app/templates/.*(eex)$"
     ]
   ]

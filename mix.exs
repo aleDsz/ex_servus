@@ -31,6 +31,7 @@ defmodule Servus.MixProject do
     # HTML
     {:phoenix_html, "~> 2.11"},
     {:phoenix_live_reload, "~> 1.2", only: :dev},
+    {:phoenix_live_view, github: "phoenixframework/phoenix_live_view"},
 
     # Database
     {:phoenix_ecto, "~> 4.0"},

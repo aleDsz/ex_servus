@@ -1,21 +1,24 @@
 defmodule App.Router do
   use App, :router
 
-  pipeline :admin do
+  pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_flash
+    plug Phoenix.LiveView.Flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
-    plug :put_layout, {App.Admin.LayoutView, "main.html"}
+  end
+
+  pipeline :admin_private do
+    plug :put_layout, {App.Admin.LayoutView, "private.html"}
+  end
+
+  pipeline :admin_public do
+    plug :put_layout, {App.Admin.LayoutView, "public.html"}
   end
 
   pipeline :web do
-    plug :accepts, ["html"]
-    plug :fetch_session
-    plug :fetch_flash
-    plug :protect_from_forgery
-    plug :put_secure_browser_headers
     plug :put_layout, {App.Web.LayoutView, "main.html"}
   end
 
@@ -30,9 +33,9 @@ defmodule App.Router do
   end
 
   scope "/admin", App.Admin do
-    pipe_through :admin
+    pipe_through [:browser, :admin_public]
 
-    get "/login", LoginController, :index
+    live "/login", LoginView
   end
 
   scope "/v1", App.Api.V1 do
