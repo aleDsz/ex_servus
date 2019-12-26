@@ -1,0 +1,12 @@
+@media screen and (max-width: 992px) {
+  #login {
+    width: 100%;
+    display: block;
+    position: relative;
+    top: 0px;
+  }
+
+  #login .servus.login .servus.logo {
+    margin: 35px;
+  }
+}
