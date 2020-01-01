@@ -11,15 +11,15 @@ defmodule App.Router do
   end
 
   pipeline :admin_private do
-    plug :put_layout, {App.Admin.LayoutView, "private.html"}
+    plug :put_layout, {App.Admin.LayoutView, :private}
   end
 
   pipeline :admin_public do
-    plug :put_layout, {App.Admin.LayoutView, "public.html"}
+    plug :put_layout, {App.Admin.LayoutView, :public}
   end
 
   pipeline :web do
-    plug :put_layout, {App.Web.LayoutView, "main.html"}
+    plug :put_layout, {App.Web.LayoutView, :main}
   end
 
   pipeline :api do
