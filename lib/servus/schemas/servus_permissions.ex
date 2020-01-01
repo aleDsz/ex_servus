@@ -7,7 +7,7 @@ defmodule Servus.Schemas.ServusPermission do
 
   @primary_key {:id, :binary_id, autogenerate: true}
 
-  schema "servus_permission" do
+  schema "servus_permissions" do
     field :name, :string
     field :description, :string
     field :status, :string, default: "active"
