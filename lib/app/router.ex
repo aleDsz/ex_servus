@@ -38,9 +38,9 @@ defmodule App.Router do
     live "/login", LoginView
   end
 
-  scope "/v1", App.Api.V1 do
-    pipe_through :api
+  scope "/admin", App.Live.Admin do
+    pipe_through [:browser, :admin_private]
 
-    post "/", LoginController, :login
+    live "/", DashboardView
   end
 end
