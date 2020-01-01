@@ -1,4 +1,4 @@
-defmodule App.Components.Button do
+defmodule App.Components.Admin.Button do
   use Phoenix.LiveComponent
   use App.Properties
 
