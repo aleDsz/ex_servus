@@ -3,6 +3,8 @@ defmodule App.Properties do
     Module.register_attribute(__CALLER__.module, :default, accumulate: true, persist: false)
 
     quote do
+      @dialyzer {:nowarn_function, get: 2}
+
       defp get_default(), do: @default |> List.first()
 
       defp get(assigns, :classes) when is_map(assigns), do:
