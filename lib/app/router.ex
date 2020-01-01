@@ -26,13 +26,7 @@ defmodule App.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", App.Web do
-    pipe_through :web
-
-    get "/", PageController, :index
-  end
-
-  scope "/admin", App.Admin do
+  scope "/admin", App.Live.Admin do
     pipe_through [:browser, :admin_public]
 
     live "/login", LoginView
