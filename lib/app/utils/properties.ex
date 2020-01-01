@@ -7,15 +7,19 @@ defmodule App.Properties do
 
       defp get_default(), do: @default |> List.first()
 
-      defp get(assigns, :classes) when is_map(assigns), do:
-        if Map.has_key?(assigns, :classes),
-          do: Map.get(assigns, :classes) |> Enum.join(" "),
-          else: Map.get(@default, :classes) |> Enum.join(" ")
+      defp get(assigns, field) when is_map(assigns) and is_atom(field) do
+        cond do
+          field == :classes ->
+            if Map.has_key?(assigns, :classes),
+              do: Map.get(assigns, :classes) |> Enum.join(" "),
+              else: Map.get(@default, :classes) |> Enum.join(" ")
 
-      defp get(assigns, field) when is_map(assigns) and is_atom(field), do:
-        if Map.has_key?(assigns, field),
-          do: Map.get(assigns, field),
-          else: Map.get(get_default(), field)
+          true ->
+            if Map.has_key?(assigns, field),
+              do: Map.get(assigns, field),
+              else: Map.get(get_default(), field)
+        end
+      end
     end
   end
 end
