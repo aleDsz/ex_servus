@@ -12,10 +12,12 @@ defmodule App.Router do
 
   pipeline :admin_private do
     plug :put_layout, {App.Admin.LayoutView, :private}
+    plug App.Plugs.Admin.Auth, :admin
   end
 
   pipeline :admin_public do
     plug :put_layout, {App.Admin.LayoutView, :public}
+    plug App.Plugs.Admin.Auth, :login
   end
 
   pipeline :web do
