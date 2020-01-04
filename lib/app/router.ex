@@ -11,11 +11,13 @@ defmodule App.Router do
   end
 
   pipeline :admin_private do
+    plug App.Plugs.Admin.Assets
     plug :put_layout, {App.Admin.LayoutView, :private}
     plug App.Plugs.Admin.Auth, :admin
   end
 
   pipeline :admin_public do
+    plug App.Plugs.Admin.Assets
     plug :put_layout, {App.Admin.LayoutView, :public}
     plug App.Plugs.Admin.Auth, :login
   end
