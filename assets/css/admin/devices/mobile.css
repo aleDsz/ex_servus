@@ -9,4 +9,9 @@
   #login .servus.login .servus.logo {
     margin: 35px;
   }
+
+  #header .servus.logo {
+    max-width: 140px;
+    padding: 5px 0;
+  }
 }
