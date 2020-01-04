@@ -1,3 +1,4 @@
+const Webpack = require('webpack');
 const path = require('path');
 const glob = require('glob');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -36,6 +37,11 @@ module.exports = (env, options) => ({
   },
   plugins: [
     new MiniCssExtractPlugin({ filename: '../css/app.css' }),
+    new Webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery', 'window.jQuery': 'jquery',
+      Popper: ['popper.js', 'default']
+    }),
     new CopyWebpackPlugin([{ from: 'static/', to: '../' }])
   ]
 });
