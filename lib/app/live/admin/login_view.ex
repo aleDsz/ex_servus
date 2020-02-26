@@ -3,8 +3,7 @@ defmodule App.Live.Admin.LoginView do
 
   import App.Router.Helpers
 
-  alias App.Components.Admin.Button
-  alias App.Components.Admin.Field
+  alias App.Components.Admin.{Text, Logo, Input, Button}
 
   alias Servus.Services.ServusUsers
 
@@ -72,29 +71,31 @@ defmodule App.Live.Admin.LoginView do
   def render(%{socket: %Phoenix.LiveView.Socket{}} = assigns) do
     ~L"""
     <section id="login">
-      <div class="servus login">
-        <div class="servus logo">
-          <img src="<%= @logo %>" class="responsive-img" alt="Servus CMS">
+      <div class="login background">
+        <%= live_component @socket, Logo, id: "logo", classes: ~w() %>
+      </div>
+      <div class="login form">
+        <div class="container">
+          <div class="title align-left">
+            <%= live_component @socket, Text, id: "title1", classes: ~w(headline1), value: "Bem-vindo ao" %>
+            <%= live_component @socket, Text, id: "title2", classes: ~w(brand damion primary-color), value: "Servus" %>
+          </div>
+          <div class="subtitle">
+            <%= live_component @socket, Text, id: "subtitle1", classes: ~w(headline3), value: "Acesse agora o seu portal administrativo" %>
+          </div>
+          <form phx-submit="login">
+            <div class="grid items-1">
+              <%= live_component @socket, Input, id: "email", error: @email_error, value: @email, icon: "user", type: "email", label: "E-mail" %>
+              <%= live_component @socket, Input, id: "password", error: @password_error, value: @password, icon: "key", type: "password", label: "Senha" %>
+            </div>
+            <div class="actions">
+              <div class="grid">
+                <%= live_component @socket, Button, id: "login", type: "submit", classes: ~w(primary-background white-text), label: "Entrar" %>
+                <%= live_component @socket, Button, id: "forgot", type: "", classes: ~w(), label: "Esqueci minha senha" %>
+              </div>
+            </div>
+          </form>
         </div>
-
-        <form phx-submit="login" class="card">
-          <div class="card-content">
-            <span class="card-title center">Acesso ao Painel Administrativo</span>
-
-            <div class="row">
-              <%= live_component @socket, Field, id: "email", error: @email_error, value: @email, size: "s12", icon: "email", type: "email", label: "E-mail" %>
-            </div>
-
-            <div class="row">
-              <%= live_component @socket, Field, id: "password", error: @password_error, value: @password, size: "s12", icon: "lock_outline", type: "password", label: "Senha" %>
-            </div>
-          </div>
-          <div class="card-action indigo lighten-5">
-            <div class="servus buttons">
-              <%= live_component @socket, Button, id: "btEntrar", classes: ~w(right orange darken-4), label: "Entrar" %>
-            </div>
-          </div>
-        </form>
       </div>
     </section>
     """
