@@ -1,5 +1,3 @@
-import materialize_css from "materialize-css/dist/css/materialize.min.css"
-import materialize_js from "materialize-css/dist/js/materialize.min.js"
 import css from "../css/app.css"
 
 import "jquery"
