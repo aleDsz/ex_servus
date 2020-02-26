@@ -1,2 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Damion|Quicksand&display=swap');
+
+@import "./variables.css";
+@import "./components.css";
 @import "./admin/main.css";
 @import "./web/main.css";
