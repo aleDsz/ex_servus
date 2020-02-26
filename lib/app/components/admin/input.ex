@@ -1,10 +1,9 @@
-defmodule App.Components.Admin.Field do
+defmodule App.Components.Admin.Input do
   use Phoenix.LiveComponent
   use App.Properties
 
   @default %{
-    size: "s12",
-    icon: "confirm",
+    icon: "",
     label: "Campo de texto",
     type: "text",
     error: nil
@@ -14,7 +13,6 @@ defmodule App.Components.Admin.Field do
     assigns_list
     |> Enum.map(fn assigns ->
       assigns
-      |> Map.put(:size, get(assigns, :size))
       |> Map.put(:icon, get(assigns, :icon))
       |> Map.put(:label, get(assigns, :label))
       |> Map.put(:type, get(assigns, :type))
@@ -56,10 +54,9 @@ defmodule App.Components.Admin.Field do
   @spec render(%{socket: Phoenix.LiveView.Socket.t()}) :: Phoenix.LiveView.Rendered.t()
   def render(%{socket: %Phoenix.LiveView.Socket{}} = assigns) do
     ~L"""
-    <div class="input-field col <%= @size %>">
-      <i class="material-icons prefix"><%= @icon %></i>
-      <label for="<%= @id %>"><%= @label %></label>
-      <input phx-keyup="validation" id="<%= @id %>" type="<%= @type %>" value="<%= @value %>" class= validate">
+    <div class="input-field">
+      <i class="la la-<%= @icon %>"></i>
+      <input phx-keyup="validation" id="<%= @id %>" type="<%= @type %>" placeholder="<%= @label %>" value="<%= @value %>">
       <span class="red-text"><%= @error %></span>
     </div>
     """
