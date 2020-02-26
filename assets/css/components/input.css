@@ -1,0 +1,65 @@
+/* Chrome autocomplete */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+  font-family: 'Quicksand';
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+input:-webkit-autofill {
+  font-family: 'Quicksand';
+  -webkit-text-fill-color: inherit !important;
+}
+
+.input-field {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-right: 58px;
+  padding-left: 58px;
+  position: relative;
+}
+
+.input-field:first-child {
+  border-top: 1px solid var(--light-color);
+  border-left: 1px solid var(--light-color);
+  border-right: 1px solid var(--light-color);
+  border-bottom: 1px solid var(--light-color);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.input-field:nth-child(n + 1) {
+  border-left: 1px solid var(--light-color);
+  border-right: 1px solid var(--light-color);
+  border-bottom: 1px solid var(--light-color);
+}
+
+.input-field:last-child {
+  border-left: 1px solid var(--light-color);
+  border-right: 1px solid var(--light-color);
+  border-bottom: 1px solid var(--light-color);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.input-field input {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  border: none;
+  box-sizing: border-box;
+  width: 100%;
+  outline: none;
+}
+
+.input-field i {
+  position: absolute;
+  height: 58px;
+  width: 58px;
+  left: 5px;
+  top: 12px;
+  font-size: 29px;
+  line-height: 53px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+}
