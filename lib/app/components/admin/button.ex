@@ -5,6 +5,7 @@ defmodule App.Components.Admin.Button do
   @default %{
     classes: [],
     label: "Botão",
+    type: "submit",
     icon: %{name: nil, position: "left"}
   }
 
@@ -14,14 +15,15 @@ defmodule App.Components.Admin.Button do
       assigns
       |> Map.put(:classes, get(assigns, :classes))
       |> Map.put(:label, get(assigns, :label))
+      |> Map.put(:type, get(assigns, :type))
       |> Map.put(:icon, get(assigns, :label))
     end)
   end
 
   def render(%{socket: %Phoenix.LiveView.Socket{}} = assigns) do
     ~L"""
-    <button type="submit" class="btn <%= @classes %>">
-      <%= @label %> <i class="material-icons right">send</i>
+    <button type="<%= @type %>" class="btn <%= @classes %>">
+      <%= @label %>
     </button>
     """
   end
