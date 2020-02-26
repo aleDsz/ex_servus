@@ -1,17 +1,14 @@
 @media screen and (max-width: 992px) {
   #login {
-    width: 100%;
-    display: block;
-    position: relative;
-    top: 0px;
+    grid-template-areas: "div";
+    grid-template-columns: 100%;
   }
 
-  #login .servus.login .servus.logo {
-    margin: 35px;
+  #login .login.background {
+    display: none;
   }
 
-  #header .servus.logo {
-    max-width: 140px;
-    padding: 5px 0;
+  #login .login.form form {
+    max-width: 100%;
   }
 }
