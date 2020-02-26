@@ -1,0 +1,19 @@
+.text {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.text.damion {
+  font-family: 'Damion', sans-serif;
+}
+
+.text.headline1 {
+  font-size: 3.45rem;
+}
+
+.text.headline2 {
+  font-size: 2.45rem;
+}
+
+.text.headline3 {
+  font-size: 1.45rem;
+}
