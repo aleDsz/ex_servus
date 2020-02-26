@@ -1,2 +1,6 @@
 @import "./devices/desktop.css";
 @import "./devices/mobile.css";
+
+html, body {
+  margin: 0 auto;
+}
