@@ -39,6 +39,22 @@ defmodule App.Plugs.Admin.Auth do
     |> case do
       nil ->
         conn
+        |> get_session(:user)
+        |> case do
+          %{"id" => user_id} when is_binary(user_id) ->
+            Logger.debug("[#{__MODULE__}] User already authenticated, redirecting...")
+
+            conn
+            |> redirect(to: "/admin")
+            |> halt()
+
+          _not_authenticated ->
+            Logger.warn("[#{__MODULE__}] User not authenticated")
+
+            conn
+        end
+
+        conn
 
       %{"id" => user_id} = user when is_binary(user_id) ->
         Logger.debug("[#{__MODULE__}] User already authenticated, redirecting...")
