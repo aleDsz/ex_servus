@@ -1,0 +1,32 @@
+.btn {
+  border: 1px solid #f1f1f1;
+  background-color: transparent;
+  padding: 20px 15px;
+  margin: 0 5px;
+  border-radius: 9px;
+  font-family: 'Quicksand';
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: background-color 200ms linear;
+  -ms-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
+}
+
+.btn:hover {
+  background-color: #f1f1f1;
+}
+
+.btn:active {
+  background-color: #e0e0e0;
+}
+
+.btn.primary-background:hover {
+  background-color: var(--primary-light) !important;
+}
+
+.btn.primary-background:active {
+  background-color: var(--primary-dark) !important;
+}
