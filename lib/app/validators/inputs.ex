@@ -18,4 +18,8 @@ defmodule App.Validators.Inputs do
   @spec password(value :: String.t(), socket :: Phoenix.LiveView.Socket.t()) :: {:ok, String.t(), Phoenix.LiveView.Socket.t()}
   def password(value, %Phoenix.LiveView.Socket{} = socket) when is_binary(value), do:
     {:ok, Base.encode64(value), assign(socket, password: value)}
+
+  @spec text(value :: String.t(), socket :: Phoenix.LiveView.Socket.t()) :: {:ok, String.t(), Phoenix.LiveView.Socket.t()}
+  def text(value, %Phoenix.LiveView.Socket{} = socket) when is_binary(value), do:
+    {:ok, value, assign(socket, text: value)}
 end
