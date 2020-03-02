@@ -1,0 +1,14 @@
+@media screen and (max-width: 992px) {
+  #login {
+    grid-template-areas: "div";
+    grid-template-columns: 100%;
+  }
+
+  #login .login.background {
+    display: none;
+  }
+
+  #login .login.form form {
+    max-width: 100%;
+  }
+}
