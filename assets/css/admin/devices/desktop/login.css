@@ -1,0 +1,49 @@
+/* Admin: Login Page */
+#login {
+  height: 100vh;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas: "div div";
+  grid-template-columns: 35% 65%;
+}
+
+#login .brand {
+  font-size: 5rem;
+}
+
+#login .login.background {
+  background: url(/images/login_background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left center;
+  z-index: 0;
+  display: grid;
+}
+
+#login .login.form {
+  z-index: 999;
+  padding: 50px 80px;
+  display: grid;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#login .login.form form {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+  max-width: 510px;
+}
+
+#login .login.form form .actions {
+  margin-top: 30px;
+}
+
+#login .login.form form .actions .grid {
+  grid-template-areas: "div";
+  grid-template-columns: 100%;
+}
+
+#login .login.background .logo {
+  content: "Servus";
+}
