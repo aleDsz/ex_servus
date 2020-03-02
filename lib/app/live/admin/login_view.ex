@@ -45,7 +45,7 @@ defmodule App.Live.Admin.LoginView do
         {:noreply, assign(socket, email_error: Gettext.gettext(App.Gettext, "E-mail can't be empty"))}
 
       is_nil(assigns.password) ->
-        {:noreply, assign(socket, email_error: Gettext.gettext(App.Gettext, "Password can't be empty"))}
+        {:noreply, assign(socket, password_error: Gettext.gettext(App.Gettext, "Password can't be empty"))}
 
       true ->
         case ServusUsers.get_by_email(assigns.email) do
@@ -77,23 +77,23 @@ defmodule App.Live.Admin.LoginView do
       <div class="login form">
         <div class="container">
           <div class="title align-left">
-            <%= live_component @socket, Text, id: "title1", classes: ~w(headline1), value: "Bem-vindo ao" %>
+            <%= live_component @socket, Text, id: "title1", classes: ~w(headline1), value: Gettext.gettext(App.Gettext, "Welcome to") %>
             <%= live_component @socket, Text, id: "title2", classes: ~w(brand damion primary-color), value: "Servus" %>
           </div>
           <div class="subtitle">
-            <%= live_component @socket, Text, id: "subtitle1", classes: ~w(headline3), value: "Acesse agora o seu portal administrativo" %>
+            <%= live_component @socket, Text, id: "subtitle1", classes: ~w(headline3), value: Gettext.gettext(App.Gettext, "Access now your administration system") %>
           </div>
           <form phx-submit="login">
             <div class="grid items-1">
-              <%= live_component @socket, Input, id: "email", error: @email_error, value: @email, icon: "user", type: "email", label: "E-mail" %>
-              <%= live_component @socket, Input, id: "password", error: @password_error, value: @password, icon: "key", type: "password", label: "Senha" %>
+              <%= live_component @socket, Input, id: "email", error: @email_error, value: @email, icon: "user", type: "email", label: Gettext.gettext(App.Gettext, "E-mail") %>
+              <%= live_component @socket, Input, id: "password", error: @password_error, value: @password, icon: "key", type: "password", label: Gettext.gettext(App.Gettext, "Password") %>
             </div>
             <div class="actions">
               <div class="grid">
-                <%= live_component @socket, Button, id: "login", type: "submit", classes: ~w(primary-background white-text), label: "Entrar" %>
-                <%= live_component @socket, Button, id: "forgot", type: "", classes: ~w(), label: "Esqueci minha senha" %>
+                <%= live_component @socket, Button, id: "login", type: "submit", classes: ~w(primary-background white-text), label: Gettext.gettext(App.Gettext, "Sign in") %>
               </div>
             </div>
+            <%= live_component @socket, Text, id: "forgot-password", classes: ~w(damion secondary-color), value: Gettext.gettext(App.Gettext, "Forgot password") %>
           </form>
         </div>
       </div>
